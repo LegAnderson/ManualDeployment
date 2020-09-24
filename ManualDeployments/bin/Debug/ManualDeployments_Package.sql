@@ -1,5 +1,5 @@
 ﻿/*
-    Generated date:     2020-09-24T19:59:20Z
+    Generated date:     2020-09-24T20:08:39Z
     Generated on:       WIN-5I6QVUJUG4J
     Package version:    
     Migration version:  (n/a)
@@ -325,6 +325,64 @@ GO
 IF NOT EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('01b55767-e3e3-4c40-b867-d676ffca7728' AS UNIQUEIDENTIFIER))
   INSERT [$(DatabaseName)].[dbo].[__MigrationLog] ([migration_id], [script_checksum], [script_filename], [complete_dt], [applied_by], [deployed], [version], [package_version], [release_version])
   VALUES                                         (CAST ('01b55767-e3e3-4c40-b867-d676ffca7728' AS UNIQUEIDENTIFIER), 'DBD85E42FA956A6649B35CF22BB6E88265DCAADCCCDEDE0B92BBC3429B80BC24', 'Migrations\1.0.0-Baseline\001_20200924-1943_Redgate.sql', SYSDATETIME(), SYSTEM_USER, 1, NULL, '$(PackageVersion)', CASE '$(ReleaseVersion)' WHEN '' THEN NULL ELSE '$(ReleaseVersion)' END);
+
+GO
+SET IMPLICIT_TRANSACTIONS, NUMERIC_ROUNDABORT OFF;
+SET ANSI_NULLS, ANSI_PADDING, ANSI_WARNINGS, ARITHABORT, CONCAT_NULL_YIELDS_NULL, NOCOUNT, QUOTED_IDENTIFIER ON;
+
+GO
+IF DB_NAME() != '$(DatabaseName)'
+  USE [$(DatabaseName)];
+
+GO
+IF NOT EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('0daae9f9-47cd-5b98-92c1-f9583354515f' AS UNIQUEIDENTIFIER) AND [script_checksum] = '511B7E483F05D824CA70663613D22F9D4431A2E33833EA8FA9E4050E532A3A83')
+  PRINT '
+
+***** EXECUTING MIGRATION "Programmable Objects\dbo\Views\contactview.sql", ID: {0daae9f9-47cd-5b98-92c1-f9583354515f} *****';
+
+GO
+IF EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('0daae9f9-47cd-5b98-92c1-f9583354515f' AS UNIQUEIDENTIFIER) AND [script_checksum] = '511B7E483F05D824CA70663613D22F9D4431A2E33833EA8FA9E4050E532A3A83')
+BEGIN
+  PRINT '----- Skipping "Programmable Objects\dbo\Views\contactview.sql", ID: {0daae9f9-47cd-5b98-92c1-f9583354515f} as there are no changes to deploy';
+  SET NOEXEC ON;
+END
+
+GO
+EXECUTE ('IF OBJECT_ID(''[dbo].[contactview]'') IS NOT NULL
+	DROP VIEW [dbo].[contactview];
+
+');
+
+GO
+SET QUOTED_IDENTIFIER ON
+
+GO
+SET ANSI_NULLS ON
+
+GO
+EXECUTE ('CREATE VIEW [dbo].[contactview]
+--WITH ENCRYPTION, SCHEMABINDING, VIEW_METADATA
+AS
+    SELECT * FROM dbo.Contacts
+-- WITH CHECK OPTION
+');
+
+GO
+SET NOEXEC OFF;
+
+GO
+IF N'$(IsSqlCmdEnabled)' <> N'True'
+  SET NOEXEC ON;
+
+GO
+IF NOT EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('0daae9f9-47cd-5b98-92c1-f9583354515f' AS UNIQUEIDENTIFIER) AND [script_checksum] = '511B7E483F05D824CA70663613D22F9D4431A2E33833EA8FA9E4050E532A3A83')
+  PRINT '***** FINISHED EXECUTING MIGRATION "Programmable Objects\dbo\Views\contactview.sql", ID: {0daae9f9-47cd-5b98-92c1-f9583354515f} *****
+';
+
+GO
+IF NOT EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('0daae9f9-47cd-5b98-92c1-f9583354515f' AS UNIQUEIDENTIFIER) AND [script_checksum] = '511B7E483F05D824CA70663613D22F9D4431A2E33833EA8FA9E4050E532A3A83')
+  INSERT [$(DatabaseName)].[dbo].[__MigrationLog] ([migration_id], [script_checksum], [script_filename], [complete_dt], [applied_by], [deployed], [version], [package_version], [release_version])
+  VALUES                                         (CAST ('0daae9f9-47cd-5b98-92c1-f9583354515f' AS UNIQUEIDENTIFIER), '511B7E483F05D824CA70663613D22F9D4431A2E33833EA8FA9E4050E532A3A83', 'Programmable Objects\dbo\Views\contactview.sql', SYSDATETIME(), SYSTEM_USER, 1, NULL, '$(PackageVersion)', CASE '$(ReleaseVersion)' WHEN '' THEN NULL ELSE '$(ReleaseVersion)' END);
 
 GO
 PRINT '# Committing transaction';
