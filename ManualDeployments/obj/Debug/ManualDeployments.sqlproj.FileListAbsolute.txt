@@ -1,0 +1,10 @@
+E:\RedgateDemos\AzureDevOpsServer\Repos\ManualDeployments\ManualDeployments\bin\Debug\ManualDeployments_Package.sql
+E:\RedgateDemos\AzureDevOpsServer\Repos\ManualDeployments\ManualDeployments\bin\Debug\ManualDeployments_DeployPackage.ps1
+E:\RedgateDemos\AzureDevOpsServer\Repos\ManualDeployments\ManualDeployments\bin\Debug\
+E:\RedgateDemos\AzureDevOpsServer\Repos\ManualDeployments\ManualDeployments\bin\Debug\ManualDeployments.dll
+E:\RedgateDemos\AzureDevOpsServer\Repos\ManualDeployments\ManualDeployments\bin\Debug\ManualDeployments.pdb
+E:\RedgateDemos\AzureDevOpsServer\Repos\ManualDeployments\ManualDeployments\obj\Debug\ManualDeployments.sqlprojResolveAssemblyReference.cache
+E:\RedgateDemos\AzureDevOpsServer\Repos\ManualDeployments\ManualDeployments\obj\Debug\ManualDeployments_Provisioning.sql
+E:\RedgateDemos\AzureDevOpsServer\Repos\ManualDeployments\ManualDeployments\obj\Debug\ManualDeployments_Package.sql
+E:\RedgateDemos\AzureDevOpsServer\Repos\ManualDeployments\ManualDeployments\obj\Debug\ManualDeployments.dll
+E:\RedgateDemos\AzureDevOpsServer\Repos\ManualDeployments\ManualDeployments\obj\Debug\ManualDeployments.pdb
