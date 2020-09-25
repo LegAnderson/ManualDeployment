@@ -4,15 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>ManualDeployments</Name>
+    <Name>tmb</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>acd4278e-f44d-4e17-9bc7-2f1b05c18c58</ProjectGuid>
+    <ProjectGuid>9a3805a7-7f71-423e-8423-df78d0327628</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath></RootPath>
-    <RootNamespace>ManualDeployments</RootNamespace>
-    <AssemblyName>ManualDeployments</AssemblyName>
+    <RootNamespace>tmb</RootNamespace>
+    <AssemblyName>tmb</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -171,9 +171,8 @@
   <ItemGroup>
     <None Include="Provisioning\CreateDatabase.sql" />
     <None Include="Provisioning\DropDatabase.sql" />
-    <None Include="Migrations\1.0.0-Baseline\001_20200924-1943_Redgate.sql" />
+    <None Include="Migrations\1.0.0-Baseline\001_20200925-1043_Redgate.sql" />
     <None Include="Schema-Model\dbo\Tables\Contacts.sql" />
-    <None Include="Migrations\1.1.0-Changes\001_20200924-2012_Redgate.sql" />
     <None Include="Programmable Objects\dbo\Views\newview.sql" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,5 @@
 ﻿/*
-    Generated date:     2020-09-24T20:08:39Z
+    Generated date:     2020-09-25T12:50:48Z
     Generated on:       WIN-5I6QVUJUG4J
     Package version:    
     Migration version:  (n/a)
@@ -335,36 +335,26 @@ IF DB_NAME() != '$(DatabaseName)'
   USE [$(DatabaseName)];
 
 GO
-IF NOT EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('0daae9f9-47cd-5b98-92c1-f9583354515f' AS UNIQUEIDENTIFIER) AND [script_checksum] = '511B7E483F05D824CA70663613D22F9D4431A2E33833EA8FA9E4050E532A3A83')
+IF NOT EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('f37fca14-641a-45c4-974a-0f1cf074531f' AS UNIQUEIDENTIFIER))
   PRINT '
 
-***** EXECUTING MIGRATION "Programmable Objects\dbo\Views\contactview.sql", ID: {0daae9f9-47cd-5b98-92c1-f9583354515f} *****';
+***** EXECUTING MIGRATION "Migrations\1.1.0-Changes\001_20200924-2012_Redgate.sql", ID: {f37fca14-641a-45c4-974a-0f1cf074531f} *****';
 
 GO
-IF EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('0daae9f9-47cd-5b98-92c1-f9583354515f' AS UNIQUEIDENTIFIER) AND [script_checksum] = '511B7E483F05D824CA70663613D22F9D4431A2E33833EA8FA9E4050E532A3A83')
+IF EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('f37fca14-641a-45c4-974a-0f1cf074531f' AS UNIQUEIDENTIFIER))
 BEGIN
-  PRINT '----- Skipping "Programmable Objects\dbo\Views\contactview.sql", ID: {0daae9f9-47cd-5b98-92c1-f9583354515f} as there are no changes to deploy';
+  PRINT '----- Skipping "Migrations\1.1.0-Changes\001_20200924-2012_Redgate.sql", ID: {f37fca14-641a-45c4-974a-0f1cf074531f} as it has already been run on this database';
   SET NOEXEC ON;
 END
 
 GO
-EXECUTE ('IF OBJECT_ID(''[dbo].[contactview]'') IS NOT NULL
-	DROP VIEW [dbo].[contactview];
-
+EXECUTE ('
+PRINT N''Dropping [dbo].[contactview]''
 ');
 
 GO
-SET QUOTED_IDENTIFIER ON
-
-GO
-SET ANSI_NULLS ON
-
-GO
-EXECUTE ('CREATE VIEW [dbo].[contactview]
---WITH ENCRYPTION, SCHEMABINDING, VIEW_METADATA
-AS
-    SELECT * FROM dbo.Contacts
--- WITH CHECK OPTION
+EXECUTE ('IF OBJECT_ID(N''[dbo].[contactview]'', ''V'') IS NOT NULL
+DROP VIEW [dbo].[contactview]
 ');
 
 GO
@@ -375,14 +365,14 @@ IF N'$(IsSqlCmdEnabled)' <> N'True'
   SET NOEXEC ON;
 
 GO
-IF NOT EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('0daae9f9-47cd-5b98-92c1-f9583354515f' AS UNIQUEIDENTIFIER) AND [script_checksum] = '511B7E483F05D824CA70663613D22F9D4431A2E33833EA8FA9E4050E532A3A83')
-  PRINT '***** FINISHED EXECUTING MIGRATION "Programmable Objects\dbo\Views\contactview.sql", ID: {0daae9f9-47cd-5b98-92c1-f9583354515f} *****
+IF NOT EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('f37fca14-641a-45c4-974a-0f1cf074531f' AS UNIQUEIDENTIFIER))
+  PRINT '***** FINISHED EXECUTING MIGRATION "Migrations\1.1.0-Changes\001_20200924-2012_Redgate.sql", ID: {f37fca14-641a-45c4-974a-0f1cf074531f} *****
 ';
 
 GO
-IF NOT EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('0daae9f9-47cd-5b98-92c1-f9583354515f' AS UNIQUEIDENTIFIER) AND [script_checksum] = '511B7E483F05D824CA70663613D22F9D4431A2E33833EA8FA9E4050E532A3A83')
+IF NOT EXISTS (SELECT 1 FROM [$(DatabaseName)].[dbo].[__MigrationLogCurrent] WHERE [migration_id] = CAST ('f37fca14-641a-45c4-974a-0f1cf074531f' AS UNIQUEIDENTIFIER))
   INSERT [$(DatabaseName)].[dbo].[__MigrationLog] ([migration_id], [script_checksum], [script_filename], [complete_dt], [applied_by], [deployed], [version], [package_version], [release_version])
-  VALUES                                         (CAST ('0daae9f9-47cd-5b98-92c1-f9583354515f' AS UNIQUEIDENTIFIER), '511B7E483F05D824CA70663613D22F9D4431A2E33833EA8FA9E4050E532A3A83', 'Programmable Objects\dbo\Views\contactview.sql', SYSDATETIME(), SYSTEM_USER, 1, NULL, '$(PackageVersion)', CASE '$(ReleaseVersion)' WHEN '' THEN NULL ELSE '$(ReleaseVersion)' END);
+  VALUES                                         (CAST ('f37fca14-641a-45c4-974a-0f1cf074531f' AS UNIQUEIDENTIFIER), '800BA472B18814E18946B7C2C9E13A42C3481395FAC8235E78DA62A818886CEA', 'Migrations\1.1.0-Changes\001_20200924-2012_Redgate.sql', SYSDATETIME(), SYSTEM_USER, 1, NULL, '$(PackageVersion)', CASE '$(ReleaseVersion)' WHEN '' THEN NULL ELSE '$(ReleaseVersion)' END);
 
 GO
 PRINT '# Committing transaction';
